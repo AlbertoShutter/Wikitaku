@@ -326,43 +326,10 @@
             android:layout_marginRight="10dp"/>
 
         <TextView
-            android:id="@+id/textReviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linea9"
-            android:layout_marginTop="14dp"
-            android:layout_alignStart="@id/textCap"
-            android:text="Reviews"
-            android:textSize="18sp"
-            android:textColor="@color/colorAccent"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/reviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textReviews"
-            android:layout_alignStart="@id/textSipnosis"
-            android:layout_marginTop="4dp"
-            android:text="Opiniones de la serie"
-            android:textColor="@color/textColor"
-            tools:ignore="HardcodedText" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="0.3dp"
-            android:background="#ffd5d5d5"
-            android:id="@+id/linea6"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/reviews"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
-
-        <TextView
             android:id="@+id/textLinks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linea6"
+            android:layout_below="@id/linea9"
             android:layout_marginTop="14dp"
             android:layout_alignStart="@id/textCap"
             android:text="Enlaces externos"
