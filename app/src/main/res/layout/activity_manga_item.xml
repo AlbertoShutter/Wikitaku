@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:paddingBottom="20dp"
+        android:background="@color/dark"
+        tools:context="com.example.alber.proyectointerfaz.MangaItem">
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingTop="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="@string/textview"
+            android:textColor="@color/textColor"
+            android:textSize="24sp"
+            android:layout_alignParentEnd="true" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea2"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/nombre"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="159dp"
+            android:layout_height="209dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/nombre"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imagen"
+            android:layout_toEndOf="@+id/textNota"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="24sp"
+            android:text="Capitulos"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/capitulos"
+            android:text="XXX"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:layout_marginTop="60dp"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:gravity="center"
+            android:layout_alignTop="@+id/imagen"
+            android:layout_toEndOf="@+id/textNota" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imagen"
+            android:layout_toEndOf="@+id/textNota"
+            android:layout_marginTop="110dp"
+            android:textSize="24sp"
+            android:text="Volumenes"
+            android:id="@+id/TextView2"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/volumenes"
+            android:text="XXX"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_alignStart="@+id/TextView2"
+            android:layout_alignEnd="@+id/TextView2"
+            android:layout_marginTop="150dp"
+            android:layout_alignTop="@+id/imagen"
+            android:layout_toEndOf="@+id/textNota" />
+
+        <Button
+            android:id="@+id/fav"
+            android:layout_width="140dp"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-190dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/imagen"
+            android:layout_toEndOf="@+id/links"
+            android:background="@drawable/bk_boton_plano"
+            android:text="Añadir" />
+
+        <Button
+            android:id="@+id/eliminar"
+            android:layout_width="140dp"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagen"
+            android:layout_marginRight="-130dp"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@id/fav"
+            android:background="@drawable/bk_boton_plano"
+            android:text="Eliminar" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea3"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/eliminar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calificar"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/textColor"
+            android:id="@+id/textNota"
+            android:layout_below="@+id/linea3"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_below="@+id/textNota"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textOriginal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre original"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/linea"
+            android:layout_alignStart="@+id/textTipo"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textOriginal"
+            android:text="Tipo"
+            android:textColor="@color/textColor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/textTipo"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textCap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textTipo"
+            android:text="Capítulos"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textCap"
+            android:text="Estado"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textEmitido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textEstado"
+            android:text="Emitido"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textEmitido"
+            android:text="Puntuación"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textDuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textScore"
+            android:text="Duración"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDuracion"
+            android:text="Pegi"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textProducers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textRating"
+            android:text="Productores"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textProducers"
+            android:text="Género"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea4"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/textGenre"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textSipnosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea4"
+            android:layout_marginTop="14dp"
+            android:layout_alignStart="@id/textCap"
+            android:text="Sinopsis"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/sinopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textSipnosis"
+            android:layout_alignStart="@id/textSipnosis"
+            android:layout_marginTop="4dp"
+            android:text="Resumen de la serie"
+            android:textColor="@color/textColor"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea5"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/sinopsis"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textTrailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea5"
+            android:layout_marginTop="14dp"
+            android:layout_alignStart="@id/textCap"
+            android:text="Galeria"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/galeria"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/textCap"
+            android:layout_below="@id/textTrailer"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bk_boton_plano"
+            android:onClick="abrir"
+            android:text="Acceder a galeria"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea9"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/galeria"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea9"
+            android:layout_marginTop="14dp"
+            android:layout_alignStart="@id/textCap"
+            android:text="Reviews"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textReviews"
+            android:layout_alignStart="@id/textSipnosis"
+            android:layout_marginTop="4dp"
+            android:text="Opiniones de la serie"
+            android:textColor="@color/textColor"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea6"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/reviews"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea6"
+            android:layout_marginTop="14dp"
+            android:layout_alignStart="@id/textCap"
+            android:text="Enlaces externos"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/links"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textLinks"
+            android:layout_alignStart="@id/textSipnosis"
+            android:layout_marginTop="4dp"
+            android:text="Links relacionados con la serie"
+            android:textColor="@color/textColor"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/manga_view"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Manga" />
+        <item
+            android:id="@+id/top_view"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Top" />
+        <item
+            android:id="@+id/temporada_view"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Temporada" />
+        <item
+            android:id="@+id/proximamente_view"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Proximamente" />
+        <item
+            android:id="@+id/emision_view"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Emisión" />
+    </group>
+
+</menu>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    card_view:cardBackgroundColor="@color/card"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:typeface="sans"
+            android:text="Large Text"
+            android:textColor="@color/textColor"
+            android:id="@+id/nombre"
+            android:layout_toRightOf="@+id/imagen"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:paddingTop="4dp"
+            android:typeface="sans"
+            android:gravity="center"
+            android:textColor="@color/textColor"
+            android:text="Small Text"
+            android:id="@+id/visitas"
+            android:layout_below="@+id/nombre"
+            android:layout_alignLeft="@+id/nombre"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="8dp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="#ffd5d5d5"
+            android:id="@+id/linea2"
+            android:layout_below="@+id/visitas"
+            android:layout_toRightOf="@+id/imagen"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/episodios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:padding="2dp"
+            android:typeface="sans"
+            android:text="Small Text"
+            android:textSize="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorAccent"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/imagen"
+            android:layout_alignStart="@+id/linea2"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/textView3"
+            android:paddingBottom="18dp"/>
+
+        <TextView
+            android:id="@+id/nota"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:background="@drawable/estilo"
+            android:padding="5dp"
+            android:text="10"
+            android:textColor="@color/textColor"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Episodios"
+            android:layout_alignEnd="@+id/linea2"
+            android:paddingLeft="10dp"
+            android:layout_alignStart="@+id/episodios"
+            android:layout_below="@+id/linea2"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

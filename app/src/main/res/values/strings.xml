@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Wikitaku</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="textview">TextView</string>
+    <string name="nota">Nota</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_manga">MangaActivity</string>
+
+    <string name="search">Search Demo</string>
+    <string name="submitted">submitted</string>
+    <string name="title_activity_buscador">Buscador</string>
+    <string name="title_activity_top_anime">TopAnimeActivity</string>
+    <string name="title_activity_emision">EmisionActivity</string>
+    <string name="title_activity_prox">ProxActivity</string>
+    <string name="title_activity_seasson">SeassonActivity</string>
+    <string name="title_activity_manga_item">MangaItem</string>
+    <string name="title_activity_buscador_manga">BuscadorManga</string>
+    <string name="title_activity_top_manga">TopMangaActivity</string>
+    <string name="title_activity_publi">PubliActivity</string>
+    <string name="title_activity_prox_manga">ProxMangaActivity</string>
+    <string name="title_activity_galeria_manga">GaleriaManga</string>
+</resources>

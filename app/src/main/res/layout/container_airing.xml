@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    card_view:cardBackgroundColor="@color/card"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/portadabuscar"
+            android:layout_width="85dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Nombre"
+            android:textColor="@color/textColor"
+            android:layout_toRightOf="@id/portadabuscar"
+            android:id="@+id/textName"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Tipo"
+            android:id="@+id/textTipo"
+            android:layout_toRightOf="@id/portadabuscar"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textName"
+            android:textColor="#666"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Fecha comienzo: "
+            android:id="@+id/textFecha"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/portadabuscar"
+            android:layout_below="@id/textTipo"
+            android:textColor="#666"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
