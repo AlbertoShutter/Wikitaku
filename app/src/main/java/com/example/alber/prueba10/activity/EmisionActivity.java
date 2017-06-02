@@ -116,9 +116,9 @@ public class EmisionActivity extends AppCompatActivity {
                         anime.setEpisodios(jsonObject.getString("Episodios"));
                         anime.setTipo(jsonObject.getString("Tipo"));
                         anime.setEstado(jsonObject.getString("Estado"));
-                        anime.setNota(jsonObject.getInt("Nota"));
+                        anime.setNota(jsonObject.getDouble("Nota"));
                         anime.setFecha(jsonObject.getString("FechaComienzo"));
-                        items.add(new Anime(jsonObject.getString("Imagen"), jsonObject.getInt("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("Episodios"), jsonObject.getString("FechaComienzo")));
+                        items.add(new Anime(jsonObject.getString("Imagen"), jsonObject.getDouble("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("Episodios"), jsonObject.getString("FechaComienzo")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

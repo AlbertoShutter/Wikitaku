@@ -265,9 +265,9 @@ public class MangaActivity extends AppCompatActivity
                         manga.setVolumenes(jsonObject.getString("Volumenes"));
                         manga.setTipo(jsonObject.getString("Tipo"));
                         manga.setEstado(jsonObject.getString("Estado"));
-                        manga.setNota(jsonObject.getInt("Nota"));
+                        manga.setNota(jsonObject.getDouble("Nota"));
                         manga.setFecha(jsonObject.getString("FechaComienzo"));
-                        items.add(new Manga(jsonObject.getString("Imagen"), jsonObject.getInt("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Capitulos"), jsonObject.getString("Volumenes"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("FechaComienzo")));
+                        items.add(new Manga(jsonObject.getString("Imagen"), jsonObject.getDouble("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Capitulos"), jsonObject.getString("Volumenes"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("FechaComienzo")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

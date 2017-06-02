@@ -39,23 +39,5 @@ public class CorreoActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*public void onClick(View v) {
-        // Reemplazamos el email por algun otro real
-        String[] to = { "ealbertopost@gmail.com", "animeapplication@hotmail.com" };
-        enviar(to, "Usuario de aplicacion");
-    }
-
-    private void enviar(String[] to,
-                        String asunto) {
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        //String[] to = direccionesEmail;
-        //String[] cc = copias;
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, asunto);
-        emailIntent.setType("message/rfc822");
-        startActivity(Intent.createChooser(emailIntent, "Email "));
-    }*/
 }
 

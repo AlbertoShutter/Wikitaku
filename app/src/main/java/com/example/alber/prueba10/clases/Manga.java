@@ -7,7 +7,7 @@ package com.example.alber.prueba10.clases;
 public class Manga {
 
     private String imagen;
-    private int nota;
+    private double nota;
     private String nombre;
     private String capitulos;
     private String volumenes;
@@ -17,7 +17,7 @@ public class Manga {
 
     public Manga() {}
 
-    public Manga(String imagen, int nota, String nombre, String capitulos, String volumenes, String tipo, String estado, String fecha) {
+    public Manga(String imagen, double nota, String nombre, String capitulos, String volumenes, String tipo, String estado, String fecha) {
         this.imagen = imagen;
         this.nota = nota;
         this.nombre = nombre;
@@ -36,11 +36,11 @@ public class Manga {
         this.imagen = imagen;
     }
 
-    public int getNota() {
+    public double getNota() {
         return nota;
     }
 
-    public void setNota(int nota) {
+    public void setNota(double nota) {
         this.nota = nota;
     }
 

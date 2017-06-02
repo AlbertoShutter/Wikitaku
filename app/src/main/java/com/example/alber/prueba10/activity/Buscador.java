@@ -213,7 +213,7 @@ public class Buscador extends AppCompatActivity {
                         anime.setNombre(json_data.getString("Nombre"));//nombre
                         anime.setTipo(json_data.getString("Tipo"));//tipo
                         anime.setEpisodios(json_data.getString("Episodios"));//episodios
-                        anime.setNota(json_data.getInt("Nota"));//nota
+                        anime.setNota(json_data.getDouble("Nota"));//nota
                         anime.setImagen(json_data.getString("Imagen"));//imagen
                         data.add(anime);
                     }

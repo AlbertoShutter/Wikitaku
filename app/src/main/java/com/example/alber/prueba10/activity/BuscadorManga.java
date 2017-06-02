@@ -213,7 +213,7 @@ public class BuscadorManga extends AppCompatActivity {
                         manga.setTipo(json_data.getString("Tipo"));//tipo
                         manga.setCapitulos(json_data.getString("Capitulos"));//episodios
                         manga.setVolumenes(json_data.getString("Volumenes"));
-                        manga.setNota(json_data.getInt("Nota"));//nota
+                        manga.setNota(json_data.getDouble("Nota"));//nota
                         manga.setImagen(json_data.getString("Imagen"));//imagen
                         data.add(manga);
                     }

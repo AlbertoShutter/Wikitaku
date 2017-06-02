@@ -6,7 +6,7 @@ package com.example.alber.prueba10.clases;
 public class Anime {
 
     private String imagen;
-    private int nota;
+    private double nota;
     private String nombre;
     private String episodios;
     private String tipo;
@@ -15,7 +15,7 @@ public class Anime {
 
     public Anime() {}
 
-    public Anime(String imagen, int nota, String nombre, String tipo, String estado, String episodios, String fecha) {
+    public Anime(String imagen, double nota, String nombre, String tipo, String estado, String episodios, String fecha) {
         this.imagen = imagen;
         this.nota = nota;
         this.nombre = nombre;
@@ -33,11 +33,11 @@ public class Anime {
         return imagen;
     }
 
-    public void setNota(int nota) {
+    public void setNota(double nota) {
         this.nota = nota;
     }
 
-    public int getNota() {
+    public double getNota() {
         return nota;
     }
 
