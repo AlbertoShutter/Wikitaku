@@ -210,11 +210,27 @@ public class Buscador extends AppCompatActivity {
                     for (int i = 0; i < jArray.length(); i++) {
                         JSONObject json_data = jArray.getJSONObject(i);
                         Anime anime = new Anime();
-                        anime.setNombre(json_data.getString("Nombre"));//nombre
-                        anime.setTipo(json_data.getString("Tipo"));//tipo
-                        anime.setEpisodios(json_data.getString("Episodios"));//episodios
-                        anime.setNota(json_data.getDouble("Nota"));//nota
-                        anime.setImagen(json_data.getString("Imagen"));//imagen
+
+                        anime.setImagen(json_data.getString("Imagen"));
+                        anime.setNombre(json_data.getString("Nombre"));
+                        anime.setEpisodios(json_data.getString("Episodios"));
+                        anime.setTipo(json_data.getString("Tipo"));
+                        anime.setEstado(json_data.getString("Estado"));
+                        anime.setNota(json_data.getDouble("Nota"));
+                        anime.setFechaComienzo(json_data.getString("FechaComienzo"));
+                        anime.setNombreOriginal(json_data.getString("NombreOriginal"));
+                        anime.setFechaFin(json_data.getString("FechaFin"));
+                        anime.setPopularidad(json_data.getString("Transmitido"));
+                        anime.setDuracion(json_data.getString("Duracion"));
+                        anime.setPegi(json_data.getString("Pegi"));
+                        anime.setProductores(json_data.getString("Productores"));
+                        anime.setEstudio(json_data.getString("Estudio"));
+                        anime.setGenero(json_data.getString("Genero"));
+                        anime.setSinopsis(json_data.getString("Sinopsis"));
+                        anime.setEnlaceTrailer(json_data.getString("EnlaceTrailer"));
+                        anime.setTemporada(json_data.getString("Temporada"));
+                        anime.setFuente(json_data.getString("Fuente"));
+
                         data.add(anime);
                     }
 

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,22 +30,45 @@ import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
 
     public static final String DEVELOPER_KEY = "AIzaSyCi3RRs6z5ZlGkkCLOxDaaI_Ful0tD8WIg";
-    private static final String VIDEO_ID = "50jqqsOxIoE";
+    private static String VIDEO_ID = "50jqqsOxIoE";
     private static final int RECOVERY_DIALOG_REQUEST = 1;
 
     YouTubePlayerFragment youTubePlayerFragment;
 
     ImageView imagen;
     Integer id;
-    TextView nombre, visitas, episodios, nota;
+    TextView nombre;
+    TextView tipo;
+    TextView nombreoriginal;
+    TextView episodios;
+    TextView capitulos;
+    TextView nota;
+    TextView estado;
+    TextView emitido;
+    TextView score;
+    TextView duracion;
+    TextView pegi;
+    TextView productores;
+    TextView generos;
+    TextView sinopsis;
+    TextView temporada;
+    TextView fuente;
+    TextView estudio;
+    TextView broadcast;
     String titulo;
     Button añadir;
+    RatingBar rb;
+
+    double cal = 0;
 
     RequestQueue requestQueue;
     HttpParse httpParse = new HttpParse();
@@ -76,16 +100,59 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         HashMap<String, String> user = db.getUserDetails();
 
         final String name = user.get("name");
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MMM-yyyy");
 
         nombre = (TextView)findViewById(R.id.nombre);
+        rb = (RatingBar)findViewById(R.id.ratingBar);
+        nombreoriginal = (TextView)findViewById(R.id.tvNombreOriginal);
         imagen = (ImageView)findViewById(R.id.imagen);
         episodios = (TextView)findViewById(R.id.capitulos);
+        tipo = (TextView)findViewById(R.id.tvTipo);
+        capitulos = (TextView)findViewById(R.id.tvCapitulos);
+        estado = (TextView)findViewById(R.id.tvEstado);
+        emitido = (TextView)findViewById(R.id.tvEmitido);
+        score = (TextView)findViewById(R.id.tvScore);
+        duracion = (TextView)findViewById(R.id.tvDuracion);
+        pegi = (TextView)findViewById(R.id.tvPegi);
+        productores = (TextView)findViewById(R.id.tvProductores);
+        generos = (TextView)findViewById(R.id.tvGenero);
+        sinopsis = (TextView)findViewById(R.id.tvSinopsis);
+        temporada = (TextView)findViewById(R.id.tvTemporada);
+        fuente = (TextView)findViewById(R.id.tvFuente);
+        estudio = (TextView)findViewById(R.id.tvEstudio);
+        broadcast = (TextView)findViewById(R.id.tvBroadcast);
 
+        //poner los datos obtenidos del activity anterior en los campos de texto para que se visualicen
         nombre.setText(getIntent().getStringExtra("nombre"));
+        nombreoriginal.setText(getIntent().getStringExtra("nombreoriginal"));
         Picasso.with(this)
                 .load(getIntent().getStringExtra("imagen"))
                 .into(imagen);
         episodios.setText(getIntent().getStringExtra("episodios"));
+        rb.setStepSize((float) 0.1);
+        rb.setRating((float)getIntent().getDoubleExtra("nota", cal)/2);
+        tipo.setText(getIntent().getStringExtra("tipo"));
+        capitulos.setText(getIntent().getStringExtra("episodios"));
+        estado.setText(getIntent().getStringExtra("estado"));
+        try {
+            Date comienzo = parseador.parse(getIntent().getStringExtra("fechacomienzo"));
+            Date fin = parseador.parse(getIntent().getStringExtra("fechafin"));
+            emitido.setText(formateador.format(comienzo) + " — " + formateador.format(fin));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        score.setText(Double.toString(getIntent().getDoubleExtra("nota", cal)));
+        duracion.setText(getIntent().getStringExtra("duracion"));
+        pegi.setText(getIntent().getStringExtra("pegi"));
+        productores.setText(getIntent().getStringExtra("productores"));
+        generos.setText(getIntent().getStringExtra("genero"));
+        sinopsis.setText(getIntent().getStringExtra("sinopsis"));
+        temporada.setText(getIntent().getStringExtra("temporada"));
+        fuente.setText(getIntent().getStringExtra("fuente"));
+        estudio.setText(getIntent().getStringExtra("estudio"));
+        broadcast.setText(getIntent().getStringExtra("transmitido"));
+        VIDEO_ID = getIntent().getStringExtra("enlacetrailer");
 
         titulo = getIntent().getStringExtra("nombre");
 

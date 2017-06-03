@@ -131,8 +131,27 @@ public class AnimeActivity extends AppCompatActivity {
                         anime.setTipo(jsonObject.getString("Tipo"));
                         anime.setEstado(jsonObject.getString("Estado"));
                         anime.setNota(jsonObject.getDouble("Nota"));
-                        anime.setFecha(jsonObject.getString("FechaComienzo"));
-                        items.add(new Anime(jsonObject.getString("Imagen"), jsonObject.getDouble("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("Episodios"), jsonObject.getString("FechaComienzo")));
+                        anime.setFechaComienzo(jsonObject.getString("FechaComienzo"));
+                        anime.setNombreOriginal(jsonObject.getString("NombreOriginal"));
+                        anime.setFechaFin(jsonObject.getString("FechaFin"));
+                        anime.setPopularidad(jsonObject.getString("Popularidad"));
+                        anime.setDuracion(jsonObject.getString("Duracion"));
+                        anime.setPegi(jsonObject.getString("Pegi"));
+                        anime.setProductores(jsonObject.getString("Productores"));
+                        anime.setEstudio(jsonObject.getString("Estudio"));
+                        anime.setGenero(jsonObject.getString("Genero"));
+                        anime.setSinopsis(jsonObject.getString("Sinopsis"));
+                        anime.setEnlaceTrailer(jsonObject.getString("EnlaceTrailer"));
+                        anime.setTemporada(jsonObject.getString("Temporada"));
+                        anime.setFuente(jsonObject.getString("Fuente"));
+
+                        items.add(new Anime(jsonObject.getString("Nombre"), jsonObject.getString("Episodios"), jsonObject.getString("Tipo"),
+                                jsonObject.getString("Estado"),  jsonObject.getDouble("Nota"), jsonObject.getString("Imagen"),jsonObject.getString("FechaComienzo"),
+                                jsonObject.getString("NombreOriginal"), jsonObject.getString("FechaFin"), jsonObject.getString("Popularidad"),
+                                jsonObject.getString("Duracion"), jsonObject.getString("Pegi"), jsonObject.getString("Productores"),
+                                jsonObject.getString("Estudio"), jsonObject.getString("Genero"), jsonObject.getString("Sinopsis"),
+                                jsonObject.getString("EnlaceTrailer"), jsonObject.getString("Temporada"), jsonObject.getString("Fuente")));
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

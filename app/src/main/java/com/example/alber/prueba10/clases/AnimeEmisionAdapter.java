@@ -13,7 +13,10 @@ import com.example.alber.prueba10.R;
 import com.example.alber.prueba10.activity.AnimeItem;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by alber on 23/05/2017.
@@ -59,6 +62,19 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
             intent.putExtra("tipo", anime.getTipo());
             intent.putExtra("estado", anime.getEstado());
             intent.putExtra("episodios", anime.getEpisodios());
+            intent.putExtra("fechacomienzo", anime.getFechaComienzo());
+            intent.putExtra("nombreoriginal", anime.getNombreOriginal());
+            intent.putExtra("fechafin", anime.getFechaFin());
+            intent.putExtra("transmitido", anime.getPopularidad());
+            intent.putExtra("duracion", anime.getDuracion());
+            intent.putExtra("pegi", anime.getPegi());
+            intent.putExtra("productores", anime.getProductores());
+            intent.putExtra("estudio", anime.getEstudio());
+            intent.putExtra("genero", anime.getGenero());
+            intent.putExtra("sinopsis", anime.getSinopsis());
+            intent.putExtra("enlacetrailer", anime.getEnlaceTrailer());
+            intent.putExtra("temporada", anime.getTemporada());
+            intent.putExtra("fuente", anime.getFuente());
             this.context.startActivity(intent);
         }
     }
@@ -82,6 +98,8 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
 
     @Override
     public void onBindViewHolder(EmisionAnimeViewHolder holder, int position) {
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MMM-yyyy");
         Anime anime = items.get(position);
         Picasso.with(context)
                 .load(anime.getImagen())
@@ -89,7 +107,13 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
         //viewHolder.imagen.setImageResource(items.get(i).getImagen());
         //viewHolder.nota.setText(""+items.get(i).getNota());
         holder.nombre.setText(items.get(position).getNombre());
-        holder.fecha.setText("Fecha comienzo: " + items.get(position).getFecha());
+        try {
+            Date comienzo = parseador.parse(items.get(position).getFechaComienzo());
+            holder.fecha.setText(formateador.format(comienzo));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //holder.fecha.setText("Fecha comienzo: " + items.get(position).getFechaComienzo());
         holder.type.setText(items.get(position).getTipo());
     }
 }

@@ -57,6 +57,19 @@ public class TopAnimeAdapter extends RecyclerView.Adapter<TopAnimeAdapter.AnimeV
             intent.putExtra("tipo", anime.getTipo());
             intent.putExtra("estado", anime.getEstado());
             intent.putExtra("episodios", anime.getEpisodios());
+            intent.putExtra("fechacomienzo", anime.getFechaComienzo());
+            intent.putExtra("nombreoriginal", anime.getNombreOriginal());
+            intent.putExtra("fechafin", anime.getFechaFin());
+            intent.putExtra("popularidad", anime.getPopularidad());
+            intent.putExtra("duracion", anime.getDuracion());
+            intent.putExtra("pegi", anime.getPegi());
+            intent.putExtra("productores", anime.getProductores());
+            intent.putExtra("estudio", anime.getEstudio());
+            intent.putExtra("genero", anime.getGenero());
+            intent.putExtra("sinopsis", anime.getSinopsis());
+            intent.putExtra("enlacetrailer", anime.getEnlaceTrailer());
+            intent.putExtra("temporada", anime.getTemporada());
+            intent.putExtra("fuente", anime.getFuente());
             this.context.startActivity(intent);
         }
     }

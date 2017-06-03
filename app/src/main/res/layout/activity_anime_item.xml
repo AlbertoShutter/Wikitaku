@@ -124,6 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
+            android:isIndicator="true"
             android:layout_below="@+id/textNota"
             android:layout_centerHorizontal="true" />
 
@@ -149,9 +150,21 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvNombreOriginal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/linea"
+            android:text="Nombre original"
+            android:layout_marginTop="14dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textOriginal"
+            android:layout_below="@id/tvNombreOriginal"
             android:text="Tipo"
             android:textColor="@color/textColor"
             android:layout_marginLeft="20dp"
@@ -160,15 +173,35 @@
             tools:ignore="HardcodedText,RtlHardcoded" />
 
         <TextView
+            android:id="@+id/tvTipo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_above="@+id/textCap"
+            android:layout_alignEnd="@+id/tvEmitido"
+            android:text="tipo"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textCap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textTipo"
-            android:text="Capítulos"
+            android:text="Episodios"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCapitulos"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="capitulos"
+            android:layout_above="@+id/textEstado"
+            android:layout_alignEnd="@+id/tvEmitido"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/textEstado"
@@ -178,8 +211,19 @@
             android:text="Estado"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
+            android:layout_alignBottom="@id/textEstado"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvEstado"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="Estado"
+            android:layout_above="@+id/textEmitido"
+            android:layout_alignEnd="@+id/tvEmitido"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/textEmitido"
@@ -193,15 +237,83 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvEmitido"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvEstado"
+            android:text="Emitido"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+        android:id="@+id/textTemporada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Temporada"
+        android:layout_alignStart="@id/textTipo"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/tvEmitido"/>
+
+        <TextView
+            android:id="@+id/tvTemporada"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Temporada"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tvEmitido"
+            android:layout_marginEnd="19dp"
+            android:layout_alignEnd="@+id/linea"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textBroadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Retransmitido"
+            android:layout_alignStart="@id/textTipo"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvTemporada"/>
+
+        <TextView
+            android:id="@+id/tvBroadcast"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Retransmitido"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tvTemporada"
+            android:layout_marginEnd="19dp"
+            android:layout_alignEnd="@+id/linea"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textEmitido"
+            android:layout_below="@id/textBroadcast"
             android:text="Puntuación"
             android:textColor="@color/textColor"
-            android:layout_alignStart="@id/textTipo"
+            android:layout_alignStart="@id/textBroadcast"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvBroadcast"
+            android:text="Score"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/textDuracion"
@@ -215,6 +327,18 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvDuracion"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvScore"
+            android:text="Duracion"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -226,10 +350,44 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvPegi"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvDuracion"
+            android:text="Pegi"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textFuente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuente"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_below="@id/tvPegi"/>
+
+        <TextView
+            android:id="@+id/tvFuente"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvPegi"
+            android:text="Fuente"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textProducers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textRating"
+            android:layout_below="@id/tvFuente"
             android:text="Productores"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
@@ -237,15 +395,62 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvProductores"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvFuente"
+            android:text="Productores"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textEstudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProductores"
+            android:text="Estudio"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvEstudio"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvProductores"
+            android:text="Estudio"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textProducers"
+            android:layout_below="@id/tvEstudio"
             android:text="Género"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvGenero"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvEstudio"
+            android:text="Generos"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
 
         <View
             android:layout_width="wrap_content"
@@ -253,7 +458,7 @@
             android:background="#ffd5d5d5"
             android:id="@+id/linea4"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/textGenre"
+            android:layout_below="@+id/tvGenero"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
@@ -270,12 +475,13 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/sinopsis"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvSinopsis"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textSipnosis"
             android:layout_alignStart="@id/textSipnosis"
             android:layout_marginTop="4dp"
+            android:layout_marginRight="19dp"
             android:text="Resumen de la serie"
             android:textColor="@color/textColor"
             tools:ignore="HardcodedText" />
@@ -286,7 +492,7 @@
             android:background="#ffd5d5d5"
             android:id="@+id/linea5"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/sinopsis"
+            android:layout_below="@+id/tvSinopsis"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
