@@ -111,15 +111,28 @@ public class PubliActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = json.getJSONObject(i);
                         Manga manga = new Manga();
-                        manga.setImagen(jsonObject.getString("Imagen"));
+
                         manga.setNombre(jsonObject.getString("Nombre"));
                         manga.setCapitulos(jsonObject.getString("Capitulos"));
                         manga.setVolumenes(jsonObject.getString("Volumenes"));
                         manga.setTipo(jsonObject.getString("Tipo"));
                         manga.setEstado(jsonObject.getString("Estado"));
                         manga.setNota(jsonObject.getDouble("Nota"));
-                        manga.setFecha(jsonObject.getString("FechaComienzo"));
-                        items.add(new Manga(jsonObject.getString("Imagen"), jsonObject.getDouble("Nota"), jsonObject.getString("Nombre"), jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getString("Capitulos"), jsonObject.getString("Volumenes"), jsonObject.getString("FechaComienzo")));
+                        manga.setImagen(jsonObject.getString("Imagen"));
+                        manga.setFechaComienzo(jsonObject.getString("FechaComienzo"));
+                        manga.setFechaFin(jsonObject.getString("FechaFin"));
+                        manga.setGenero(jsonObject.getString("Genero"));
+                        manga.setAutor(jsonObject.getString("Autor"));
+                        manga.setSerializacion(jsonObject.getString("Serialización"));
+                        manga.setSinopsis(jsonObject.getString("Sinopsis"));
+                        manga.setNombreOriginal(jsonObject.getString("NombreOriginal"));
+
+                        items.add(new Manga(jsonObject.getString("Nombre"), jsonObject.getString("Capitulos"), jsonObject.getString("Volumenes"),
+                                jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getDouble("Nota"),
+                                jsonObject.getString("Imagen"), jsonObject.getString("FechaComienzo"), jsonObject.getString("FechaFin"),
+                                jsonObject.getString("Genero"), jsonObject.getString("Autor"), jsonObject.getString("Serialización"),
+                                jsonObject.getString("Sinopsis"), jsonObject.getString("NombreOriginal")));
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

@@ -149,6 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
+            android:isIndicator="true"
             android:layout_below="@+id/textNota"
             android:layout_centerHorizontal="true" />
 
@@ -174,9 +175,21 @@
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/tvNombreOriginal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/linea"
+            android:text="Nombre original"
+            android:layout_marginTop="14dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textOriginal"
+            android:layout_below="@id/tvNombreOriginal"
             android:text="Tipo"
             android:textColor="@color/textColor"
             android:layout_marginLeft="20dp"
@@ -185,21 +198,68 @@
             tools:ignore="HardcodedText,RtlHardcoded" />
 
         <TextView
+            android:id="@+id/tvTipo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_above="@+id/textCap"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:text="tipo"
+            android:gravity="right"/>
+
+        <TextView
             android:id="@+id/textCap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textTipo"
-            android:text="Capítulos"
+            android:text="Capitulos"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/textEstado"
+            android:id="@+id/tvCapitulos"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="capitulos"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/textTipo"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textVolumen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textCap"
+            android:layout_below="@id/tvCapitulos"
+            android:text="Volumenes"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textTipo"
+            android:layout_alignBottom="@id/textEstado"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvVolumen"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="Volumenes"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tvCapitulos"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textEmitido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvVolumen"
             android:text="Estado"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
@@ -207,78 +267,136 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/textEmitido"
+            android:id="@+id/tvEstado"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvVolumen"
+            android:text="Estado"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textPuntuacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textEstado"
-            android:text="Emitido"
+            android:layout_marginTop="10dp"
+            android:text="Puntuacion"
+            android:layout_alignStart="@id/textTipo"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvEstado"/>
+
+        <TextView
+            android:id="@+id/tvPuntuacion"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Puntuacion"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tvEstado"
+            android:layout_marginEnd="19dp"
+            android:layout_alignEnd="@+id/linea"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textPublicado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Publicado"
+            android:layout_alignStart="@id/textTipo"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvPuntuacion"/>
+
+        <TextView
+            android:id="@+id/tvPublicado"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Publicado"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tvPuntuacion"
+            android:layout_marginEnd="19dp"
+            android:layout_alignEnd="@+id/linea"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textAutores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPublicado"
+            android:text="Autores"
+            android:textColor="@color/textColor"
+            android:layout_alignStart="@id/textPublicado"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvAutores"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvPublicado"
+            android:text="Autores"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textSerializacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAutores"
+            android:text="Serializacion"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/textScore"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvSerializacion"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textEmitido"
-            android:text="Puntuación"
             android:textColor="@color/textColor"
-            android:layout_alignStart="@id/textTipo"
+            android:layout_below="@+id/tvAutores"
+            android:text="Serializacion"
             android:layout_marginTop="10dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/textDuracion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textScore"
-            android:text="Duración"
-            android:textColor="@color/textColor"
-            android:layout_alignStart="@id/textTipo"
-            android:layout_marginTop="10dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/textRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textDuracion"
-            android:text="Pegi"
-            android:textColor="@color/textColor"
-            android:layout_alignStart="@id/textTipo"
-            android:layout_marginTop="10dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/textProducers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textRating"
-            android:text="Productores"
-            android:textColor="@color/textColor"
-            android:layout_alignStart="@id/textTipo"
-            android:layout_marginTop="10dp"
-            tools:ignore="HardcodedText" />
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/textGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textProducers"
+            android:layout_below="@id/tvSerializacion"
             android:text="Género"
             android:textColor="@color/textColor"
             android:layout_alignStart="@id/textTipo"
             android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
 
+        <TextView
+            android:id="@+id/tvGenero"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/tvSerializacion"
+            android:text="Generos"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@+id/linea"
+            android:layout_marginEnd="19dp"
+            android:gravity="right"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="0.3dp"
             android:background="#ffd5d5d5"
             android:id="@+id/linea4"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/textGenre"
+            android:layout_below="@+id/tvGenero"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
@@ -296,7 +414,8 @@
 
         <TextView
             android:id="@+id/sinopsis"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginRight="19dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textSipnosis"
             android:layout_alignStart="@id/textSipnosis"

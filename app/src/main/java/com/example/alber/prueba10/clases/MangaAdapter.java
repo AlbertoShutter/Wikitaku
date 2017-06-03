@@ -54,13 +54,20 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.MangaViewHol
             int position = getAdapterPosition();
             Manga manga = this.manga.get(position);
             Intent intent = new Intent(this.context, MangaItem.class);
-            intent.putExtra("imagen", manga.getImagen());
             intent.putExtra("nombre", manga.getNombre());
-            intent.putExtra("nota", manga.getTipo());
-            intent.putExtra("tipo", manga.getTipo());
-            intent.putExtra("estado", manga.getEstado());
             intent.putExtra("capitulos", manga.getCapitulos());
             intent.putExtra("volumenes", manga.getVolumenes());
+            intent.putExtra("tipo", manga.getTipo());
+            intent.putExtra("estado", manga.getEstado());
+            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("imagen", manga.getImagen());
+            intent.putExtra("fechacomienzo", manga.getFechaComienzo());
+            intent.putExtra("fechafin", manga.getFechaFin());
+            intent.putExtra("genero", manga.getGenero());
+            intent.putExtra("autor", manga.getAutor());
+            intent.putExtra("serializacion", manga.getSerializacion());
+            intent.putExtra("sinopsis", manga.getSinopsis());
+            intent.putExtra("nombreoriginal", manga.getNombreOriginal());
             this.context.startActivity(intent);
         }
     }
@@ -92,6 +99,8 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.MangaViewHol
         viewHolder.info.setText(items.get(i).getTipo() + " • " + items.get(i).getEstado());
         viewHolder.capitulos.setText(String.valueOf(items.get(i).getCapitulos()));
         viewHolder.volumenes.setText(String.valueOf(items.get(i).getVolumenes()));
-        viewHolder.nota.setText(String.valueOf(items.get(i).getNota()));
+        Double d = new Double(items.get(i).getNota());
+        int iv = d.intValue();
+        viewHolder.nota.setText(String.valueOf(iv));
     }
 }

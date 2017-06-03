@@ -33,7 +33,6 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
         public TextView nombre;
         public TextView fecha;
         public TextView type;
-        //public TextView nota;
 
         ArrayList<Anime> anime = new ArrayList<Anime>();
         Context context;
@@ -47,8 +46,6 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
             nombre = (TextView) v.findViewById(R.id.textName);
             fecha = (TextView) v.findViewById(R.id.textFecha);
             type = (TextView) v.findViewById(R.id.textTipo);
-            //chapters = (TextView) v.findViewById(R.id.episodios);
-            //nota = (TextView) v.findViewById(R.id.nota);
         }
 
         @Override
@@ -104,8 +101,6 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
         Picasso.with(context)
                 .load(anime.getImagen())
                 .into(holder.imagen);
-        //viewHolder.imagen.setImageResource(items.get(i).getImagen());
-        //viewHolder.nota.setText(""+items.get(i).getNota());
         holder.nombre.setText(items.get(position).getNombre());
         try {
             Date comienzo = parseador.parse(items.get(position).getFechaComienzo());
@@ -113,7 +108,6 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        //holder.fecha.setText("Fecha comienzo: " + items.get(position).getFechaComienzo());
         holder.type.setText(items.get(position).getTipo());
     }
 }

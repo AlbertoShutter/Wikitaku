@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.alber.prueba10.R;
-import com.example.alber.prueba10.activity.AnimeItem;
+import com.example.alber.prueba10.activity.MangaItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -51,14 +51,21 @@ public class TopMangaAdapter extends RecyclerView.Adapter<TopMangaAdapter.MangaV
         public void onClick(View view) {
             int position = getAdapterPosition();
             Manga manga = this.manga.get(position);
-            Intent intent = new Intent(this.context, AnimeItem.class);
-            intent.putExtra("imagen", manga.getImagen());
+            Intent intent = new Intent(this.context, MangaItem.class);
             intent.putExtra("nombre", manga.getNombre());
-            intent.putExtra("nota", manga.getNota());
-            intent.putExtra("tipo", manga.getTipo());
-            intent.putExtra("estado", manga.getEstado());
             intent.putExtra("capitulos", manga.getCapitulos());
             intent.putExtra("volumenes", manga.getVolumenes());
+            intent.putExtra("tipo", manga.getTipo());
+            intent.putExtra("estado", manga.getEstado());
+            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("imagen", manga.getImagen());
+            intent.putExtra("fechacomienzo", manga.getFechaComienzo());
+            intent.putExtra("fechafin", manga.getFechaFin());
+            intent.putExtra("genero", manga.getGenero());
+            intent.putExtra("autor", manga.getAutor());
+            intent.putExtra("serializacion", manga.getSerializacion());
+            intent.putExtra("sinopsis", manga.getSinopsis());
+            intent.putExtra("nombreoriginal", manga.getNombreOriginal());
             this.context.startActivity(intent);
         }
     }

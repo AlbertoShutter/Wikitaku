@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         txtUsuario = (TextView) header.findViewById(R.id.usuarioAnime);
         txtAnime = (TextView) header.findViewById(R.id.tAnime);
         txtUsuario.setText(name);
-        txtAnime.setText("@"+name);
+        txtAnime.setText("@"+name+"Wikitaku");
         //Lo mismo para contar todos los animes y mangas que se hallan visto y leido
 
         mSwipeRefreshLayout.setColorSchemeResources(R.color.dark, R.color.colorAccent);

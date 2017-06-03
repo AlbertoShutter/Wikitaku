@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,9 @@ import com.example.alber.prueba10.clases.HttpParse;
 import com.example.alber.prueba10.helper.SQLiteHandler;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,9 +36,13 @@ public class MangaItem extends AppCompatActivity {
 
     ImageView imagen;
     Integer id;
-    TextView nombre, visitas, capitulos, nota, volumenes;
+    TextView nombre, capitulos, nota, volumenes;
+    TextView nombreoriginal, tipo, chapters, volumen, state, puntuacion, publicado, autores, serializacion, genero, sinopsis;
     String titulo;
     Button añadir, galeria;
+    RatingBar rb;
+
+    double cal = 0;
 
     RequestQueue requestQueue;
     HttpParse httpParse = new HttpParse();
@@ -66,21 +74,53 @@ public class MangaItem extends AppCompatActivity {
         HashMap<String, String> user = db.getUserDetails();
 
         final String name = user.get("name");
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MMM-yyyy");
 
         nombre = (TextView)findViewById(R.id.nombre);
         imagen = (ImageView)findViewById(R.id.imagen);
+        rb = (RatingBar)findViewById(R.id.ratingBar);
         capitulos = (TextView)findViewById(R.id.capitulos);
         volumenes = (TextView)findViewById(R.id.volumenes);
-
         galeria = (Button)findViewById(R.id.galeria);
+        nombreoriginal = (TextView)findViewById(R.id.tvNombreOriginal);
+        tipo = (TextView)findViewById(R.id.tvTipo);
+        chapters = (TextView)findViewById(R.id.tvCapitulos);
+        volumen = (TextView)findViewById(R.id.tvVolumen);
+        state = (TextView)findViewById(R.id.tvEstado);
+        puntuacion = (TextView)findViewById(R.id.tvPuntuacion);
+        publicado = (TextView)findViewById(R.id.tvPublicado);
+        autores = (TextView)findViewById(R.id.tvAutores);
+        serializacion = (TextView)findViewById(R.id.tvSerializacion);
+        genero = (TextView)findViewById(R.id.tvGenero);
+        sinopsis = (TextView)findViewById(R.id.sinopsis);
 
-
+        //poner los datos obtenidos del activity anterior en los campos de texto para que se visualicen
         nombre.setText(getIntent().getStringExtra("nombre"));
+        nombreoriginal.setText(getIntent().getStringExtra("nombreoriginal"));
         Picasso.with(this)
                 .load(getIntent().getStringExtra("imagen"))
                 .into(imagen);
         capitulos.setText(getIntent().getStringExtra("capitulos"));
         volumenes.setText(getIntent().getStringExtra("volumenes"));
+        rb.setStepSize((float) 0.1);
+        rb.setRating((float)getIntent().getDoubleExtra("nota", cal)/2);
+        tipo.setText(getIntent().getStringExtra("tipo"));
+        chapters.setText(getIntent().getStringExtra("capitulos"));
+        volumen.setText(getIntent().getStringExtra("volumenes"));
+        state.setText(getIntent().getStringExtra("estado"));
+        puntuacion.setText(Double.toString(getIntent().getDoubleExtra("nota", cal)));
+        try {
+            Date comienzo = parseador.parse(getIntent().getStringExtra("fechacomienzo"));
+            Date fin = parseador.parse(getIntent().getStringExtra("fechafin"));
+            publicado.setText(formateador.format(comienzo) + " — " + formateador.format(fin));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        autores.setText(getIntent().getStringExtra("autor"));
+        serializacion.setText(getIntent().getStringExtra("serializacion"));
+        genero.setText(getIntent().getStringExtra("genero"));
+        sinopsis.setText(getIntent().getStringExtra("sinopsis"));
 
         titulo = getIntent().getStringExtra("nombre");
 

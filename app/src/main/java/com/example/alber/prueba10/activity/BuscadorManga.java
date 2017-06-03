@@ -209,12 +209,21 @@ public class BuscadorManga extends AppCompatActivity {
                     for (int i = 0; i < jArray.length(); i++) {
                         JSONObject json_data = jArray.getJSONObject(i);
                         Manga manga = new Manga();
-                        manga.setNombre(json_data.getString("Nombre"));//nombre
-                        manga.setTipo(json_data.getString("Tipo"));//tipo
-                        manga.setCapitulos(json_data.getString("Capitulos"));//episodios
+
+                        manga.setNombre(json_data.getString("Nombre"));
+                        manga.setCapitulos(json_data.getString("Capitulos"));
                         manga.setVolumenes(json_data.getString("Volumenes"));
-                        manga.setNota(json_data.getDouble("Nota"));//nota
-                        manga.setImagen(json_data.getString("Imagen"));//imagen
+                        manga.setTipo(json_data.getString("Tipo"));
+                        manga.setEstado(json_data.getString("Estado"));
+                        manga.setNota(json_data.getDouble("Nota"));
+                        manga.setImagen(json_data.getString("Imagen"));
+                        manga.setFechaComienzo(json_data.getString("FechaComienzo"));
+                        manga.setFechaFin(json_data.getString("FechaFin"));
+                        manga.setGenero(json_data.getString("Genero"));
+                        manga.setAutor(json_data.getString("Autor"));
+                        manga.setSerializacion(json_data.getString("Serialización"));
+                        manga.setSinopsis(json_data.getString("Sinopsis"));
+                        manga.setNombreOriginal(json_data.getString("NombreOriginal"));
                         data.add(manga);
                     }
 

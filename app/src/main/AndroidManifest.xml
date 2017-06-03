@@ -37,7 +37,6 @@
             android:name=".activity.AnimeItem"
             android:label="Ficha"
             android:theme="@style/Tema" />
-        <activity android:name=".activity.AnimeItems" />
         <activity
             android:name=".activity.MangaActivity"
             android:label="Favoritos"
@@ -109,11 +108,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.PubliActivity"
-            android:label="@string/title_activity_publi"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".activity.ProxMangaActivity"
-            android:label="@string/title_activity_prox_manga"
+            android:label="Publicando"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.GaleriaManga"

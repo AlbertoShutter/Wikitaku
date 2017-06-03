@@ -56,13 +56,20 @@ public class SearchMangaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             int position = getAdapterPosition();
             Manga manga = this.manga.get(position);
             Intent intent = new Intent(this.context, MangaItem.class);
-            intent.putExtra("imagen", manga.getImagen());
             intent.putExtra("nombre", manga.getNombre());
-            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("capitulos", manga.getCapitulos());
+            intent.putExtra("volumenes", manga.getVolumenes());
             intent.putExtra("tipo", manga.getTipo());
             intent.putExtra("estado", manga.getEstado());
-            intent.putExtra("episodios", manga.getCapitulos());
-            intent.putExtra("volumenes", manga.getVolumenes());
+            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("imagen", manga.getImagen());
+            intent.putExtra("fechacomienzo", manga.getFechaComienzo());
+            intent.putExtra("fechafin", manga.getFechaFin());
+            intent.putExtra("genero", manga.getGenero());
+            intent.putExtra("autor", manga.getAutor());
+            intent.putExtra("serializacion", manga.getSerializacion());
+            intent.putExtra("sinopsis", manga.getSinopsis());
+            intent.putExtra("nombreoriginal", manga.getNombreOriginal());
             this.context.startActivity(intent);
         }
     }

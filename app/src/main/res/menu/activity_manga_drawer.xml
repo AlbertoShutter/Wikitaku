@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/anime_view"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/anime"
             android:title="Anime" />
         <item
             android:id="@+id/top_view"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/top"
             android:title="Top" />
-        <item
+        <!--<item
             android:id="@+id/proximamente_view"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Proximamente" />
+            android:title="Proximamente" />-->
         <item
             android:id="@+id/pub_view"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/student"
             android:title="Publicando" />
     </group>
 

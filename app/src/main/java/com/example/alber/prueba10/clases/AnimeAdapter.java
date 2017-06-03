@@ -97,7 +97,9 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.AnimeViewHol
         Picasso.with(context)
             .load(anime.getImagen())
             .into(viewHolder.imagen);
-        viewHolder.nota.setText(String.valueOf(items.get(i).getNota()));
+        Double d = new Double(items.get(i).getNota());
+        int iv = d.intValue();
+        viewHolder.nota.setText(String.valueOf(iv));
         viewHolder.nombre.setText(items.get(i).getNombre());
         viewHolder.info.setText(items.get(i).getTipo() + " • " + items.get(i).getEstado());
         viewHolder.chapters.setText(items.get(i).getEpisodios());

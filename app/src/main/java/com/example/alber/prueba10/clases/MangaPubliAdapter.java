@@ -13,7 +13,10 @@ import com.example.alber.prueba10.R;
 import com.example.alber.prueba10.activity.MangaItem;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by alber on 27/05/2017.
@@ -53,12 +56,20 @@ public class MangaPubliAdapter extends RecyclerView.Adapter<MangaPubliAdapter.Pu
             int position = getAdapterPosition();
             Manga manga = this.manga.get(position);
             Intent intent = new Intent(this.context, MangaItem.class);
-            intent.putExtra("imagen", manga.getImagen());
             intent.putExtra("nombre", manga.getNombre());
-            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("capitulos", manga.getCapitulos());
+            intent.putExtra("volumenes", manga.getVolumenes());
             intent.putExtra("tipo", manga.getTipo());
             intent.putExtra("estado", manga.getEstado());
-            intent.putExtra("episodios", manga.getCapitulos());
+            intent.putExtra("nota", manga.getNota());
+            intent.putExtra("imagen", manga.getImagen());
+            intent.putExtra("fechacomienzo", manga.getFechaComienzo());
+            intent.putExtra("fechafin", manga.getFechaFin());
+            intent.putExtra("genero", manga.getGenero());
+            intent.putExtra("autor", manga.getAutor());
+            intent.putExtra("serializacion", manga.getSerializacion());
+            intent.putExtra("sinopsis", manga.getSinopsis());
+            intent.putExtra("nombreoriginal", manga.getNombreOriginal());
             this.context.startActivity(intent);
         }
     }
@@ -83,13 +94,21 @@ public class MangaPubliAdapter extends RecyclerView.Adapter<MangaPubliAdapter.Pu
     @Override
     public void onBindViewHolder(PubliMangaViewHolder holder, int position) {
         Manga manga = items.get(position);
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MMM-yyyy");
         Picasso.with(context)
                 .load(manga.getImagen())
                 .into(holder.imagen);
         //viewHolder.imagen.setImageResource(items.get(i).getImagen());
         //viewHolder.nota.setText(""+items.get(i).getNota());
         holder.nombre.setText(items.get(position).getNombre());
-        holder.fecha.setText("Fecha comienzo: " + items.get(position).getFecha());
+        try {
+            Date comienzo = parseador.parse(items.get(position).getFechaComienzo());
+            holder.fecha.setText("Fecha comienzo: " + formateador.format(comienzo));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //holder.fecha.setText("Fecha comienzo: " + items.get(position).getFechaComienzo());
         holder.type.setText(items.get(position).getTipo());
     }
 }
