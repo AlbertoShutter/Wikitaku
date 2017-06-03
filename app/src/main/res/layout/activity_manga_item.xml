@@ -114,12 +114,11 @@
             android:layout_width="140dp"
             android:textColor="@android:color/white"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imagen"
-            android:layout_marginRight="-130dp"
-            android:layout_marginTop="20dp"
-            android:layout_toLeftOf="@id/fav"
+            android:layout_marginLeft="195dp"
             android:background="@drawable/bk_boton_plano"
-            android:text="Eliminar" />
+            android:text="Eliminar"
+            android:layout_alignBaseline="@+id/fav"
+            android:layout_alignBottom="@+id/fav" />
 
         <View
             android:layout_width="wrap_content"
@@ -475,10 +474,12 @@
             android:layout_below="@id/linea9"
             android:layout_marginTop="14dp"
             android:layout_alignStart="@id/textCap"
-            android:text="Enlaces externos"
+            android:text="¿Quieres saber más de este manga?"
             android:textSize="18sp"
+            android:gravity="center"
             android:textColor="@color/colorAccent"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:layout_alignEnd="@+id/galeria" />
 
         <TextView
             android:id="@+id/links"
@@ -489,7 +490,20 @@
             android:layout_marginTop="4dp"
             android:text="Links relacionados con la serie"
             android:textColor="@color/textColor"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="quiero saber mas"
+            android:background="@drawable/bk_boton_plano"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textLinks"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"/>
 
     </RelativeLayout>
 

@@ -2,6 +2,7 @@ package com.example.alber.prueba10.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +67,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
     TextView broadcast;
     String titulo;
     Button añadir;
+    Button link;
     RatingBar rb;
 
     double cal = 0;
@@ -122,6 +124,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         fuente = (TextView)findViewById(R.id.tvFuente);
         estudio = (TextView)findViewById(R.id.tvEstudio);
         broadcast = (TextView)findViewById(R.id.tvBroadcast);
+        link = (Button)findViewById(R.id.link);
 
         //poner los datos obtenidos del activity anterior en los campos de texto para que se visualicen
         nombre.setText(getIntent().getStringExtra("nombre"));
@@ -163,6 +166,15 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
 
         youTubePlayerFragment = (YouTubePlayerFragment)getFragmentManager().findFragmentById(R.id.youtubeplayerfragment);
         youTubePlayerFragment.initialize(DEVELOPER_KEY, this);
+
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://myanimelist.net/animelist/AlbertShutter");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
