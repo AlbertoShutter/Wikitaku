@@ -3,13 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AnimeActivity">
 
-    <!--<item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />-->
-
     <item android:id="@+id/action_buscar"
-        android:title="Buscar"
+        android:title="@string/txt_compartir"
         android:icon="@drawable/ic_menu_share"
         android:orderInCategory="100"
         app:showAsAction="always" />

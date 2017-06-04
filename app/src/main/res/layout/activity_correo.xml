@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:layout_marginLeft="50dp"
-        android:text="Asunto" />
+        android:text="@string/txt_asunto" />
 
     <EditText
         android:id="@+id/etSubject"
@@ -24,7 +24,8 @@
         android:layout_marginBottom="20dp"
         android:width="300dip" />
 
-    <TextView android:text="Mensaje"
+    <TextView
+        android:text="@string/txt_mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -47,5 +48,6 @@
         android:layout_marginTop="40dp"
         android:width="150dip"
         android:background="@drawable/button"
-        android:text="Enviar" />
+        android:text="@string/txt_enviar" />
+
 </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="130dp"
@@ -17,52 +18,52 @@
             android:id="@+id/portadabuscar"
             android:layout_width="85dp"
             android:layout_height="120dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Nombre"
-            android:textColor="@color/textColor"
-            android:layout_toRightOf="@id/portadabuscar"
             android:id="@+id/textFishName"
-            android:layout_marginLeft="5dp"/>
-
-        <TextView
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Capitulos"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/portadabuscar"
+            android:text="@string/txt_nombre"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
+
+        <TextView
             android:id="@+id/textSize"
-            android:layout_toRightOf="@id/portadabuscar"
-            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/textFishName"
-            android:textColor="#666"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/portadabuscar"
+            android:text="@string/txt_capitulos"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#666" />
 
         <TextView
+            android:id="@+id/textType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Categoria"
-            android:id="@+id/textType"
+            android:layout_below="@id/textSize"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/portadabuscar"
-            android:layout_below="@id/textSize"
-            android:textColor="#666"/>
+            android:text="@string/txt_categoria"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#666" />
 
         <TextView
+            android:id="@+id/textPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Nota"
-            android:id="@+id/textPrice"
-            android:textColor="#666"
+            android:layout_below="@id/textType"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_toRightOf="@id/portadabuscar"
-            android:layout_below="@id/textType"/>
+            android:text="@string/txt_puntuacion"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#666" />
 
     </RelativeLayout>
 

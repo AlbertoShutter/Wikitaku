@@ -6,19 +6,14 @@
         android:icon="@android:drawable/ic_menu_search"
         android:title="Search"
         app:showAsAction="always"/>
-    <!--<item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />-->
     <item
         android:id="@+id/support"
         android:orderInCategory="100"
-        android:title="Soporte"
+        android:title="@string/txt_soporte"
         app:showAsAction="never" />
     <item
         android:id="@+id/logout"
         android:orderInCategory="100"
-        android:title="Cerrar Sesion"
+        android:title="@string/txt_cerrar"
         app:showAsAction="never" />
 </menu>

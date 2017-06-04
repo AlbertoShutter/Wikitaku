@@ -5,23 +5,23 @@
         <item
             android:id="@+id/manga_view"
             android:icon="@drawable/manga"
-            android:title="Manga" />
+            android:title="@string/txt_manga" />
         <item
             android:id="@+id/top_view"
             android:icon="@drawable/top"
-            android:title="Top" />
+            android:title="@string/txt_top" />
         <item
             android:id="@+id/temporada_view"
             android:icon="@drawable/seasson"
-            android:title="Temporada" />
+            android:title="@string/txt_temporada" />
         <item
             android:id="@+id/proximamente_view"
             android:icon="@drawable/comingsoon"
-            android:title="Proximamente" />
+            android:title="@string/txt_prox" />
         <item
             android:id="@+id/emision_view"
             android:icon="@drawable/emision"
-            android:title="Emisión" />
+            android:title="@string/txt_emision" />
     </group>
 
 </menu>

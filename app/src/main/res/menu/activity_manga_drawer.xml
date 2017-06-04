@@ -5,19 +5,15 @@
         <item
             android:id="@+id/anime_view"
             android:icon="@drawable/anime"
-            android:title="Anime" />
+            android:title="@string/txt_anime" />
         <item
             android:id="@+id/top_view"
             android:icon="@drawable/top"
-            android:title="Top" />
-        <!--<item
-            android:id="@+id/proximamente_view"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Proximamente" />-->
+            android:title="@string/txt_top" />
         <item
             android:id="@+id/pub_view"
             android:icon="@drawable/student"
-            android:title="Publicando" />
+            android:title="@string/txt_publicando" />
     </group>
 
 </menu>

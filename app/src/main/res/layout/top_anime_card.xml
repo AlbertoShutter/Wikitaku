@@ -34,7 +34,7 @@
             android:paddingTop="4dp"
             android:text="Large Text"
             android:textColor="@color/textColor"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:typeface="sans" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:text="Small Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/colorAccent"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:typeface="sans" />
 
     </RelativeLayout>
