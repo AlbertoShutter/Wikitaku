@@ -45,15 +45,17 @@ public class MainActivity extends AppCompatActivity
     private TextView txtUsuario;
     private TextView txtAnime;
 
+    // Variables para la base de datos local
     private SQLiteHandler db;
     private SessionManager session;
 
+    // Variables para el RecyvlerView
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
 
+    // Variables para recibir los datos
     private String url_consulta;
-
     private JSONArray jSONArray;
     private DevuelveJSON devuelveJSON;
 

@@ -28,15 +28,17 @@ import java.util.HashMap;
 
 public class EmisionActivity extends AppCompatActivity {
 
+    // Variables necesarias para iniciar el reclicador
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
 
+    // Variables para obtener los datos de MySql
     private String url_consulta;
-
     private JSONArray jSONArray;
     private DevuelveJSON devuelveJSON;
 
+    // Crear un ArrayList donde se guardarán los datos recibidos del Json
     ArrayList<Anime> items = new ArrayList<>();
 
     @Override
@@ -47,9 +49,7 @@ public class EmisionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         url_consulta = "http://192.168.1.41:8080/prueba/consulusu.php?ins_sql=SELECT%20*%20FROM%20series%20WHERE%20Estado%20=%20%27En%20emision%27";
-
         devuelveJSON = new DevuelveJSON();
-
         probarConexion();
 
         // Obtener el Recycler

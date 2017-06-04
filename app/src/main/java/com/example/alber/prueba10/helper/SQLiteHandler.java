@@ -17,17 +17,17 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     private static final String TAG = SQLiteHandler.class.getSimpleName();
 
-    // All Static variables
+    // Todas las variables estaticas
     // Database Version
     private static final int DATABASE_VERSION = 1;
 
-    // Database Name
+    // Nombre de la base de datos
     private static final String DATABASE_NAME = "android_api";
 
-    // Login table name
+    // Nombre de la table logeo
     private static final String TABLE_USER = "user";
 
-    // Login Table Columns names
+    // Nombre de las columnas
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_EMAIL = "email";
@@ -38,7 +38,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    // Creating Tables
+    // Crear las tablas
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_LOGIN_TABLE = "CREATE TABLE " + TABLE_USER + "("
@@ -47,40 +47,40 @@ public class SQLiteHandler extends SQLiteOpenHelper {
                 + KEY_CREATED_AT + " TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
 
-        Log.d(TAG, "Database tables created");
+        Log.d(TAG, "Tablas de la base de datos creadas");
     }
 
-    // Upgrading database
+    // Actualizando la tabla
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
+        // Eliminar la tabla si ya existe
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
 
-        // Create tables again
+        // Crear las tablas otra vez
         onCreate(db);
     }
 
     /**
-     * Storing user details in database
+     * Almacenar los detalles en la tabla
      * */
     public void addUser(String name, String email, String uid, String created_at) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, name); // Name
+        values.put(KEY_NAME, name); // Nombre
         values.put(KEY_EMAIL, email); // Email
         values.put(KEY_UID, uid); // Email
-        values.put(KEY_CREATED_AT, created_at); // Created At
+        values.put(KEY_CREATED_AT, created_at); // Fecha de creación
 
-        // Inserting Row
+        // Insertar tabla
         long id = db.insert(TABLE_USER, null, values);
-        db.close(); // Closing database connection
+        db.close(); // Cerra la conexion con la base de datos
 
-        Log.d(TAG, "New user inserted into sqlite: " + id);
+        Log.d(TAG, "Nuevo usuario insertado en sqlite: " + id);
     }
 
     /**
-     * Getting user data from database
+     * Devolver los usuarios de la base de datos
      * */
     public HashMap<String, String> getUserDetails() {
         HashMap<String, String> user = new HashMap<String, String>();
@@ -88,7 +88,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        // Move to first row
+        // Mover a la primera de fila
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             user.put("name", cursor.getString(1));
@@ -98,22 +98,22 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         }
         cursor.close();
         db.close();
-        // return user
+        // Devolver el usuario
         Log.d(TAG, "Fetching user from Sqlite: " + user.toString());
 
         return user;
     }
 
     /**
-     * Re crate database Delete all tables and create them again
+     * Crear la base de datos otra vez
      * */
     public void deleteUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
-        // Delete All Rows
+        // Eleminar la base de datos
         db.delete(TABLE_USER, null, null);
         db.close();
 
-        Log.d(TAG, "Deleted all user info from sqlite");
+        Log.d(TAG, "Se ha eliminado todo de SQLite");
     }
 
 }

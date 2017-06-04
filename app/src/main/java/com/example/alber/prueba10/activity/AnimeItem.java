@@ -39,12 +39,13 @@ import java.util.Map;
 
 public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
 
+    // Variables necesarias para hacer funcionar el widget de YouTube
     public static final String DEVELOPER_KEY = "AIzaSyCi3RRs6z5ZlGkkCLOxDaaI_Ful0tD8WIg";
     private static String VIDEO_ID = "50jqqsOxIoE";
     private static final int RECOVERY_DIALOG_REQUEST = 1;
-
     YouTubePlayerFragment youTubePlayerFragment;
 
+    // Los widgets donde se van a introducir los datos de la serie en cuestión
     ImageView imagen;
     Integer id;
     TextView nombre;
@@ -69,25 +70,18 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
     Button añadir;
     Button link;
     RatingBar rb;
-
     double cal = 0;
 
+    // Variables para obtener los datos desde MySql
     RequestQueue requestQueue;
     HttpParse httpParse = new HttpParse();
-
     String url_consulta = "http://192.168.1.41:8080/prueba/insertuser.php";
     String deleteRecord = "http://192.168.1.41:8080/prueba/delete.php";
-
     Button deletebtn;
-
     String finalResult ;
-
     HashMap<String,String> hashMap = new HashMap<>();
-
     ProgressDialog progressDialog2;
-
     private SQLiteHandler db;
-
     String text, subject;
 
     @Override
@@ -95,16 +89,16 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anime_item);
 
-        añadir = (Button)findViewById(R.id.fav);
-        deletebtn = (Button)findViewById(R.id.eliminar);
-
         db = new SQLiteHandler(getApplicationContext());
         HashMap<String, String> user = db.getUserDetails();
 
+        // Aplicar formato a la fecha para que aparezca de una manera más entendible
         final String name = user.get("name");
         SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat formateador = new SimpleDateFormat("dd-MMM-yyyy");
 
+        añadir = (Button)findViewById(R.id.fav);
+        deletebtn = (Button)findViewById(R.id.eliminar);
         nombre = (TextView)findViewById(R.id.nombre);
         rb = (RatingBar)findViewById(R.id.ratingBar);
         nombreoriginal = (TextView)findViewById(R.id.tvNombreOriginal);
@@ -126,7 +120,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         broadcast = (TextView)findViewById(R.id.tvBroadcast);
         link = (Button)findViewById(R.id.link);
 
-        //poner los datos obtenidos del activity anterior en los campos de texto para que se visualicen
+        // Poner los datos obtenidos del activity anterior en los campos de texto para que se visualicen
         nombre.setText(getIntent().getStringExtra("nombre"));
         nombreoriginal.setText(getIntent().getStringExtra("nombreoriginal"));
         Picasso.with(this)
@@ -156,19 +150,18 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         estudio.setText(getIntent().getStringExtra("estudio"));
         broadcast.setText(getIntent().getStringExtra("transmitido"));
         VIDEO_ID = getIntent().getStringExtra("enlacetrailer");
-
         final String enlace = getIntent().getStringExtra("link");
-
         titulo = getIntent().getStringExtra("nombre");
-
         text = enlace;
         subject = "Echa un vistazo a esto (enviado desde Wikitaku)";
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
+        // Inicializar el fragment donde se va a visualizar el tráiler
         youTubePlayerFragment = (YouTubePlayerFragment)getFragmentManager().findFragmentById(R.id.youtubeplayerfragment);
         youTubePlayerFragment.initialize(DEVELOPER_KEY, this);
 
+        // Botón con el cual se accederá a la página web de la serie
         link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,6 +171,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
             }
         });
 
+        // Botón para añadir la serie a favoritos
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -206,6 +200,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
             }
         });
 
+        // Botón para eliminar la serie de favoritos
         deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

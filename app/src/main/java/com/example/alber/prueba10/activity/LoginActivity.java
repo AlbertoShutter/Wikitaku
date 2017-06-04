@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends Activity {
+
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnLinkToRegister;
@@ -56,27 +57,27 @@ public class LoginActivity extends Activity {
         // Session manager
         session = new SessionManager(getApplicationContext());
 
-        // Check if user is already logged in or not
+        // Comprobar si el usuario esta ya logeado o no
         if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
+            // Si el usuario esta ya logeado lo llevará al activity principal
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
 
-        // Login button Click Event
+        // Evento al clickar el boton de logearse
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
-                // Check for empty data in the form
+                // Comprobar que el formulario de registro no este vacio
                 if (!email.isEmpty() && !password.isEmpty()) {
-                    // login user
+                    // Logear usuario
                     checkLogin(email, password);
                 } else {
-                    // Prompt user to enter credentials
+                    // Mostrar las credenciales del usuario
                     Toast.makeText(getApplicationContext(),
                             "Please enter the credentials!", Toast.LENGTH_LONG)
                             .show();
@@ -85,7 +86,7 @@ public class LoginActivity extends Activity {
 
         });
 
-        // Link to Register Screen
+        // Link a la pantalla de registro
         btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -99,10 +100,10 @@ public class LoginActivity extends Activity {
     }
 
     /**
-     * function to verify login details in mysql db
+     * Función para verificar los de detalles de login en mysql
      * */
     private void checkLogin(final String email, final String password) {
-        // Tag used to cancel the request
+        // Cancelar petición
         String tag_string_req = "req_login";
 
         pDialog.setMessage("Logging in ...");
@@ -120,13 +121,13 @@ public class LoginActivity extends Activity {
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
 
-                    // Check for error node in json
+                    // Comprobar los datos del JSON
                     if (!error) {
-                        // user successfully logged in
-                        // Create login session
+                        // Usuario correctamente logeado
+                        // Crear una sesión de logeo
                         session.setLogin(true);
 
-                        // Now store the user in SQLite
+                        // Almacenar el usuario en la base de datos de SQLite
                         String uid = jObj.getString("uid");
 
                         JSONObject user = jObj.getJSONObject("user");
@@ -135,16 +136,16 @@ public class LoginActivity extends Activity {
                         String created_at = user
                                 .getString("created_at");
 
-                        // Inserting row in users table
+                        // Insertar un usuario en la tabla usuarios
                         db.addUser(name, email, uid, created_at);
 
-                        // Launch main activity
+                        // Lanzar la actividad principal
                         Intent intent = new Intent(LoginActivity.this,
                                 MainActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
-                        // Error in login. Get the error message
+                        // Mostrar mensaje si hay error al logearse
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
@@ -169,7 +170,7 @@ public class LoginActivity extends Activity {
 
             @Override
             protected Map<String, String> getParams() {
-                // Posting parameters to login url
+                // Parametros para la dirección de logeo
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("email", email);
                 params.put("password", password);
@@ -179,7 +180,7 @@ public class LoginActivity extends Activity {
 
         };
 
-        // Adding request to request queue
+        // Añadiendo respuesta
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 

@@ -58,16 +58,16 @@ public class RegisterActivity extends Activity {
         // SQLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
-        // Check if user is already logged in or not
+        // Comprobar si el usuario esta ya logeado
         if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
+            // Si esta logeado llevarlo a la actividad principal
             Intent intent = new Intent(RegisterActivity.this,
                     MainActivity.class);
             startActivity(intent);
             finish();
         }
 
-        // Register Button Click event
+        // Botón de registro
         btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String name = inputFullName.getText().toString().trim();
@@ -84,7 +84,7 @@ public class RegisterActivity extends Activity {
             }
         });
 
-        // Link to Login Screen
+        // Pantalla de logeo
         btnLinkToLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {

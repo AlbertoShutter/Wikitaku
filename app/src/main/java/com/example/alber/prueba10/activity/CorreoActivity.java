@@ -20,6 +20,7 @@ public class CorreoActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // obtenemos los datos para el envío del correo
                 EditText etSubject = (EditText) findViewById(R.id.etSubject);
                 EditText etBody = (EditText) findViewById(R.id.etBody);

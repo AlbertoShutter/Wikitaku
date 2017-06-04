@@ -37,8 +37,21 @@ public class MangaItem extends AppCompatActivity {
 
     ImageView imagen;
     Integer id;
-    TextView nombre, capitulos, nota, volumenes;
-    TextView nombreoriginal, tipo, chapters, volumen, state, puntuacion, publicado, autores, serializacion, genero, sinopsis;
+    TextView nombre;
+    TextView capitulos;
+    TextView nota;
+    TextView volumenes;
+    TextView nombreoriginal;
+    TextView tipo;
+    TextView chapters;
+    TextView volumen;
+    TextView state;
+    TextView puntuacion;
+    TextView publicado;
+    TextView autores;
+    TextView serializacion;
+    TextView genero;
+    TextView sinopsis;
     String titulo;
     Button añadir, galeria;
     RatingBar rb;
@@ -134,7 +147,6 @@ public class MangaItem extends AppCompatActivity {
         link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("---------------------------------------------------------------------------"+enlace);
                 Uri uri = Uri.parse(enlace);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);

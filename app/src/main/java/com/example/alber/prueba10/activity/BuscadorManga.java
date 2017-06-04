@@ -39,11 +39,11 @@ import java.util.List;
 
 public class BuscadorManga extends AppCompatActivity {
 
+    // Variables para conexión con MySql
     public static final int CONNECTION_TIMEOUT = 10000;
     public static final int READ_TIMEOUT = 15000;
     private RecyclerView mRVFish;
     private SearchMangaAdapter mAdapter;
-
     SearchView searchView = null;
 
     @Override
@@ -57,10 +57,10 @@ public class BuscadorManga extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        // adds item to action bar
+        // Añadir item a la action bar
         getMenuInflater().inflate(R.menu.menu_buscador, menu);
 
-        // Get Search item from action bar and Get Search service
+        // Obtener el objeto a buscar desde el campo de texto de la action bar
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchManager searchManager = (SearchManager) BuscadorManga.this.getSystemService(Context.SEARCH_SERVICE);
         if (searchItem != null) {
@@ -79,10 +79,10 @@ public class BuscadorManga extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Every time when you press search button on keypad an Activity is recreated which in turn calls this function
+    // Cada vez que se busque una cadena escrita se ejecutará esta función
     @Override
     protected void onNewIntent(Intent intent) {
-        // Get search query and create object of class AsyncFetch
+        // Obtener la cadena escrita y la pasará a la función AsyncFetch que buscará esa cadena en MySql
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             if (searchView != null) {
@@ -92,7 +92,7 @@ public class BuscadorManga extends AppCompatActivity {
         }
     }
 
-    // Create class AsyncFetch
+    // Clase AsyncFetch que se le pasará el php con la instrucción para buscar en la tabla correspondiente
     private class AsyncFetch extends AsyncTask<String, String, String> {
 
         ProgressDialog pdLoading = new ProgressDialog(BuscadorManga.this);
@@ -108,19 +108,15 @@ public class BuscadorManga extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
-            //this method will be running on UI thread
             pdLoading.setMessage("\tLoading...");
             pdLoading.setCancelable(false);
             pdLoading.show();
-
         }
 
         @Override
         protected String doInBackground(String... params) {
 
-
-            // Enter URL address where your php file resides
+            // Introducir la URL donde se encuentra el archivo php
             try {
                 url = new URL("http://192.168.1.41:8080/prueba/consulusu3.php");
             } catch (MalformedURLException e) {
@@ -129,17 +125,17 @@ public class BuscadorManga extends AppCompatActivity {
 
             try {
 
-                // Setup HttpURLConnection class to send and receive data from php and mysql
+                // Clase para recibir y enviar datos a través de php
                 conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(READ_TIMEOUT);
                 conn.setConnectTimeout(CONNECTION_TIMEOUT);
                 conn.setRequestMethod("POST");
 
-                // setDoInput and setDoOutput to true as we send and recieve data
+                // Permitir que se envien y reciban datos
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
-                // add parameter to our above url
+                // Añadir los parametros a nuestra url
                 Uri.Builder builder = new Uri.Builder().appendQueryParameter("buscar", searchQuery);
                 String query = builder.build().getEncodedQuery();
 
@@ -161,10 +157,10 @@ public class BuscadorManga extends AppCompatActivity {
 
                 int response_code = conn.getResponseCode();
 
-                // Check if successful connection made
+                // Comprobar que halla conexión
                 if (response_code == HttpURLConnection.HTTP_OK) {
 
-                    // Read data sent from server
+                    // Leer los datos recibidos desde php
                     InputStream input = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                     StringBuilder result = new StringBuilder();
@@ -174,7 +170,7 @@ public class BuscadorManga extends AppCompatActivity {
                         result.append(line);
                     }
 
-                    // Pass data to onPostExecute method
+                    // Pasar los datos al metodo PostExecute
                     return (result.toString());
 
                 } else {
@@ -192,7 +188,6 @@ public class BuscadorManga extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            //this method will be running on UI thread
             pdLoading.dismiss();
             List<Manga> data=new ArrayList<>();
 
@@ -205,11 +200,10 @@ public class BuscadorManga extends AppCompatActivity {
 
                     JSONArray jArray = new JSONArray(result);
 
-                    // Extract data from json and store into ArrayList as class objects
+                    // Extraer los datos del json e introducirlos en un JSONArray
                     for (int i = 0; i < jArray.length(); i++) {
                         JSONObject json_data = jArray.getJSONObject(i);
                         Manga manga = new Manga();
-
                         manga.setNombre(json_data.getString("Nombre"));
                         manga.setCapitulos(json_data.getString("Capitulos"));
                         manga.setVolumenes(json_data.getString("Volumenes"));
@@ -225,25 +219,21 @@ public class BuscadorManga extends AppCompatActivity {
                         manga.setSinopsis(json_data.getString("Sinopsis"));
                         manga.setNombreOriginal(json_data.getString("NombreOriginal"));
                         manga.setLink(json_data.getString("Link"));
-
                         data.add(manga);
                     }
 
-                    // Setup and Handover data to recyclerview
+                    // Visualizar los datos en el recyclerView
                     mRVFish = (RecyclerView) findViewById(R.id.fishPriceList);
                     mAdapter = new SearchMangaAdapter(BuscadorManga.this, (ArrayList<Manga>) data);
                     mRVFish.setAdapter(mAdapter);
                     mRVFish.setLayoutManager(new LinearLayoutManager(BuscadorManga.this));
 
                 } catch (JSONException e) {
-                    // You to understand what actually error is and handle it appropriately
+                    // Si ocurre algun error estos mensajes harán más fácil entender porque ha ocurrido
                     Toast.makeText(BuscadorManga.this, e.toString(), Toast.LENGTH_LONG).show();
                     Toast.makeText(BuscadorManga.this, result.toString(), Toast.LENGTH_LONG).show();
                 }
-
             }
-
         }
-
     }
 }

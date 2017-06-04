@@ -17,14 +17,13 @@ public class DetalleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
-
         usarToolbar();
 
         // Obtener el coche con el identificador establecido en la actividad principal
         itemDetallado = getIntent().getStringExtra("imagen");
-
         imagenExtendida = (ImageView) findViewById(R.id.imagen_extendida);
 
+        // Visualizar la imagen seleccionada
         cargarImagenExtendida();
     }
 
