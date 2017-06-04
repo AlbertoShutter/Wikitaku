@@ -68,6 +68,8 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.MangaViewHol
             intent.putExtra("serializacion", manga.getSerializacion());
             intent.putExtra("sinopsis", manga.getSinopsis());
             intent.putExtra("nombreoriginal", manga.getNombreOriginal());
+            intent.putExtra("link", manga.getLink());
+
             this.context.startActivity(intent);
         }
     }

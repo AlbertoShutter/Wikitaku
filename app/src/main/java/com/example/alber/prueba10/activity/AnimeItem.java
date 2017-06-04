@@ -157,9 +157,11 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         broadcast.setText(getIntent().getStringExtra("transmitido"));
         VIDEO_ID = getIntent().getStringExtra("enlacetrailer");
 
+        final String enlace = getIntent().getStringExtra("link");
+
         titulo = getIntent().getStringExtra("nombre");
 
-        text = "https://myanimelist.net/animelist/AlbertShutter";
+        text = enlace;
         subject = "Echa un vistazo a esto (enviado desde Wikitaku)";
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -170,7 +172,7 @@ public class AnimeItem extends AppCompatActivity implements YouTubePlayer.OnInit
         link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://myanimelist.net/animelist/AlbertShutter");
+                Uri uri = Uri.parse(enlace);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }

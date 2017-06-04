@@ -20,12 +20,13 @@ public class Manga {
     private String serializacion;
     private String sinopsis;
     private String nombreOriginal;
+    private String link;
 
     public Manga() {}
 
     public Manga(String nombre, String capitulos, String volumenes, String tipo, String estado, double nota, String imagen,
                  String fechaComienzo, String fechaFin, String genero, String autor, String serializacion, String sinopsis,
-                 String nombreOriginal) {
+                 String nombreOriginal, String link) {
 
         this.nombre = nombre;
         this.capitulos = capitulos;
@@ -41,6 +42,7 @@ public class Manga {
         this.serializacion = serializacion;
         this.sinopsis = sinopsis;
         this.nombreOriginal = nombreOriginal;
+        this.link = link;
     }
 
     public String getImagen() {
@@ -153,5 +155,13 @@ public class Manga {
 
     public void setNombreOriginal(String nombreOriginal) {
         this.nombreOriginal = nombreOriginal;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

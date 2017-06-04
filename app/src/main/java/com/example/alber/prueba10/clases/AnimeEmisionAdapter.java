@@ -72,6 +72,7 @@ public class AnimeEmisionAdapter extends RecyclerView.Adapter<AnimeEmisionAdapte
             intent.putExtra("enlacetrailer", anime.getEnlaceTrailer());
             intent.putExtra("temporada", anime.getTemporada());
             intent.putExtra("fuente", anime.getFuente());
+            intent.putExtra("link", anime.getLink());
             this.context.startActivity(intent);
         }
     }

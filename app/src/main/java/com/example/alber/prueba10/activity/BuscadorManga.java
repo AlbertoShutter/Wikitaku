@@ -224,6 +224,8 @@ public class BuscadorManga extends AppCompatActivity {
                         manga.setSerializacion(json_data.getString("Serialización"));
                         manga.setSinopsis(json_data.getString("Sinopsis"));
                         manga.setNombreOriginal(json_data.getString("NombreOriginal"));
+                        manga.setLink(json_data.getString("Link"));
+
                         data.add(manga);
                     }
 

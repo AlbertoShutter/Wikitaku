@@ -69,6 +69,8 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             intent.putExtra("enlacetrailer", anime.getEnlaceTrailer());
             intent.putExtra("temporada", anime.getTemporada());
             intent.putExtra("fuente", anime.getFuente());
+            intent.putExtra("link", anime.getLink());
+
             this.context.startActivity(intent);
         }
 

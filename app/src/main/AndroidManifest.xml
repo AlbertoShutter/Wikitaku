@@ -30,10 +30,6 @@
             android:launchMode="singleTop"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.AnimeActivity"
-            android:label="Anime"
-            android:theme="@style/Tema" />
-        <activity
             android:name=".activity.AnimeItem"
             android:label="Ficha"
             android:theme="@style/Tema" />

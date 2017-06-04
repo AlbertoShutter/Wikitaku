@@ -131,13 +131,15 @@ public class TopAnimeActivity extends AppCompatActivity {
                         anime.setEnlaceTrailer(jsonObject.getString("EnlaceTrailer"));
                         anime.setTemporada(jsonObject.getString("Temporada"));
                         anime.setFuente(jsonObject.getString("Fuente"));
+                        anime.setLink(jsonObject.getString("Link"));
 
                         items.add(new Anime(jsonObject.getString("Nombre"), jsonObject.getString("Episodios"), jsonObject.getString("Tipo"),
                                 jsonObject.getString("Estado"),  jsonObject.getDouble("Nota"), jsonObject.getString("Imagen"),jsonObject.getString("FechaComienzo"),
                                 jsonObject.getString("NombreOriginal"), jsonObject.getString("FechaFin"), jsonObject.getString("Transmitido"),
                                 jsonObject.getString("Duracion"), jsonObject.getString("Pegi"), jsonObject.getString("Productores"),
                                 jsonObject.getString("Estudio"), jsonObject.getString("Genero"), jsonObject.getString("Sinopsis"),
-                                jsonObject.getString("EnlaceTrailer"), jsonObject.getString("Temporada"), jsonObject.getString("Fuente")));
+                                jsonObject.getString("EnlaceTrailer"), jsonObject.getString("Temporada"), jsonObject.getString("Fuente"),
+                                jsonObject.getString("Link")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

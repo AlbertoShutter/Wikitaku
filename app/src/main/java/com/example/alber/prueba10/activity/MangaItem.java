@@ -125,6 +125,8 @@ public class MangaItem extends AppCompatActivity {
         genero.setText(getIntent().getStringExtra("genero"));
         sinopsis.setText(getIntent().getStringExtra("sinopsis"));
 
+        final String enlace = getIntent().getStringExtra("link");
+
         titulo = getIntent().getStringExtra("nombre");
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -132,7 +134,8 @@ public class MangaItem extends AppCompatActivity {
         link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://myanimelist.net/animelist/AlbertShutter");
+                System.out.println("---------------------------------------------------------------------------"+enlace);
+                Uri uri = Uri.parse(enlace);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -173,7 +176,7 @@ public class MangaItem extends AppCompatActivity {
             }
         });
 
-        text = "https://myanimelist.net/animelist/AlbertShutter";
+        text = enlace;
         subject = "Echa un vistazo a esto (enviado desde Wikitaku)";
     }
 

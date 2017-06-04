@@ -271,12 +271,13 @@ public class MangaActivity extends AppCompatActivity
                         manga.setSerializacion(jsonObject.getString("Serialización"));
                         manga.setSinopsis(jsonObject.getString("Sinopsis"));
                         manga.setNombreOriginal(jsonObject.getString("NombreOriginal"));
+                        manga.setLink(jsonObject.getString("Link"));
 
                         items.add(new Manga(jsonObject.getString("Nombre"), jsonObject.getString("Capitulos"), jsonObject.getString("Volumenes"),
                                 jsonObject.getString("Tipo"), jsonObject.getString("Estado"), jsonObject.getDouble("Nota"),
                                 jsonObject.getString("Imagen"), jsonObject.getString("FechaComienzo"), jsonObject.getString("FechaFin"),
                                 jsonObject.getString("Genero"), jsonObject.getString("Autor"), jsonObject.getString("Serialización"),
-                                jsonObject.getString("Sinopsis"), jsonObject.getString("NombreOriginal")));
+                                jsonObject.getString("Sinopsis"), jsonObject.getString("NombreOriginal"), jsonObject.getString("Link")));
 
                     } catch (JSONException e) {
                         e.printStackTrace();

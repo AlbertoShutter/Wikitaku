@@ -70,6 +70,8 @@ public class MangaPubliAdapter extends RecyclerView.Adapter<MangaPubliAdapter.Pu
             intent.putExtra("serializacion", manga.getSerializacion());
             intent.putExtra("sinopsis", manga.getSinopsis());
             intent.putExtra("nombreoriginal", manga.getNombreOriginal());
+            intent.putExtra("link", manga.getLink());
+
             this.context.startActivity(intent);
         }
     }

@@ -230,6 +230,7 @@ public class Buscador extends AppCompatActivity {
                         anime.setEnlaceTrailer(json_data.getString("EnlaceTrailer"));
                         anime.setTemporada(json_data.getString("Temporada"));
                         anime.setFuente(json_data.getString("Fuente"));
+                        anime.setLink(json_data.getString("Link"));
 
                         data.add(anime);
                     }

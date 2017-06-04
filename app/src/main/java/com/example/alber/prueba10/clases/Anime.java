@@ -24,12 +24,13 @@ public class Anime {
     private String enlaceTrailer;
     private String temporada;
     private String fuente;
+    private String link;
 
     public Anime() {}
 
     public Anime(String nombre, String episodios, String tipo, String estado, double nota, String imagen, String fechaComienzo,
                  String nombreOriginal, String fechaFin, String popularidad, String duracion, String pegi, String productores,
-                 String estudio, String genero, String sinopsis, String enlaceTrailer, String temporada, String fuente) {
+                 String estudio, String genero, String sinopsis, String enlaceTrailer, String temporada, String fuente, String link) {
 
         this.nombre = nombre;
         this.episodios = episodios;
@@ -50,6 +51,7 @@ public class Anime {
         this.enlaceTrailer = enlaceTrailer;
         this.temporada = temporada;
         this.fuente = fuente;
+        this.link = link;
     }
 
     public void setImagen(String imagen) {
@@ -202,5 +204,13 @@ public class Anime {
 
     public void setFuente(String fuente) {
         this.fuente = fuente;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

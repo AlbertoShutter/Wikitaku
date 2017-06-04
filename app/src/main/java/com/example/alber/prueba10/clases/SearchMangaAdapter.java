@@ -70,6 +70,7 @@ public class SearchMangaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             intent.putExtra("serializacion", manga.getSerializacion());
             intent.putExtra("sinopsis", manga.getSinopsis());
             intent.putExtra("nombreoriginal", manga.getNombreOriginal());
+            intent.putExtra("link", manga.getLink());
             this.context.startActivity(intent);
         }
     }
