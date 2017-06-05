@@ -8,11 +8,11 @@
             android:title="@string/txt_anime" />
         <item
             android:id="@+id/top_view"
-            android:icon="@drawable/top"
+            android:icon="@drawable/ranking"
             android:title="@string/txt_top" />
         <item
             android:id="@+id/pub_view"
-            android:icon="@drawable/student"
+            android:icon="@drawable/publicando"
             android:title="@string/txt_publicando" />
     </group>
 

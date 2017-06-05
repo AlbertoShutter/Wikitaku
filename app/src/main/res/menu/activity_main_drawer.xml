@@ -8,7 +8,7 @@
             android:title="@string/txt_manga" />
         <item
             android:id="@+id/top_view"
-            android:icon="@drawable/top"
+            android:icon="@drawable/ranking"
             android:title="@string/txt_top" />
         <item
             android:id="@+id/temporada_view"

@@ -26,16 +26,16 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.MainActivity"
-            android:label="Favoritos"
+            android:label="@string/txt_favoritos"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.AnimeItem"
-            android:label="Ficha"
+            android:label="@string/txt_ficha"
             android:theme="@style/Tema" />
         <activity
             android:name=".activity.MangaActivity"
-            android:label="Favoritos"
+            android:label="@string/txt_favoritos"
             android:theme="@style/AppTheme" />
         <activity android:name=".activity.CorreoActivity" />
 
@@ -60,23 +60,23 @@
         </activity>
         <activity
             android:name=".activity.TopAnimeActivity"
-            android:label="Top Anime"
+            android:label="@string/txt_ranking"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.EmisionActivity"
-            android:label="En emisión"
+            android:label="@string/txt_emi"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.ProxActivity"
-            android:label="Proximamente"
+            android:label="@string/txt_prox"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.SeassonActivity"
-            android:label="Temporada"
+            android:label="@string/txt_temporada"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.MangaItem"
-            android:label="Ficha"
+            android:label="@string/txt_ficha"
             android:theme="@style/Tema" />
 
         <meta-data
@@ -85,7 +85,7 @@
 
         <activity
             android:name=".activity.BuscadorManga"
-            android:label="Buscador"
+            android:label="@string/title_activity_buscador"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -100,19 +100,19 @@
         </activity>
         <activity
             android:name=".activity.TopMangaActivity"
-            android:label="Top Manga"
+            android:label="@string/txt_ranman"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.PubliActivity"
-            android:label="Publicando"
+            android:label="@string/txt_publicando"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.GaleriaManga"
-            android:label="Galeria"
+            android:label="@string/txt_galeria"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".activity.DetalleActivity"
-            android:label="Capturas"
+            android:label="@string/txt_captura"
             android:theme="@style/AppTheme"/>
     </application>
 

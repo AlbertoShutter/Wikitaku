@@ -77,4 +77,10 @@
     <string name="txt_soporte">Soporte</string>
     <string name="txt_cerrar">Cerrar sesión</string>
     <string name="txt_compartir">Compartir</string>
+    <string name="txt_favoritos">Favoritos</string>
+    <string name="txt_ficha">Ficha</string>
+    <string name="txt_ranking">Ranking Anime</string>
+    <string name="txt_emi">En Emisión</string>
+    <string name="txt_ranman">Ranking Manga</string>
+    <string name="txt_captura">Captura</string>
 </resources>
